@@ -1,1 +1,0 @@
-Este código se baseia no exemplo do professor Kikee, e faz as leituras dos registradores conforme o parâmetro definido pelo usuário
