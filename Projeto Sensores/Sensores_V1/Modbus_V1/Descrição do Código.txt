@@ -1,0 +1,1 @@
+Este código serve para conectar o arduino via Modbus, e passa os valores inteiros lidos no ADS1115 e MAX6675.

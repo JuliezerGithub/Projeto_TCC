@@ -1,30 +1,9 @@
 /*  
-  Modbus RTU Server para Arduino UNO / MEGA.
-  
-  Arduino recebe requisicoes Modbus RTU pela Serial/USB ou Modulo RS-485.
-  
-  Porta Serial:
-  O servidor Modbus utiliza a interface Serial padrao. Nao usar esta mesma Serial para debug!
-  
-  Para usar com modulo RS-485 (conversor RS-485/TTL):
-  A biblioteca ArduinoRS485 utiliza o pino 2 ligado ao pino RE e DE do modulo RS485/TTL.
-
-  Instalar as bibliotecas:
-  ArduinoModbus (by Arduino). Versao 1.0.7
-  ArduinoRS485 (by Arduino). Versao 1.0.4
-  
-  Referencias:
-  https://www.arduino.cc/en/ArduinoModbus/ArduinoModbus
-  https://www.arduino.cc/en/Reference/ArduinoRS485
-  
-  Licenca MIT - conforme arquivo LICENCE.TXT
-
-  Link do circuito basico no TinkerCAD
-  https://www.tinkercad.com/things/j5SwQB4B2Nx
-  
-  modificado 15 set 2023
-  by Gustavo Kunzel
-  https://kikee.com.br/ensino-de-engenharia
+* Título: Modbus_V0
+* Versão: 0
+* Data: 08/04/2024
+* Descrição: Conecta via modbus o arduino com o PC (Teste ModbusPool)
+* - Realiza a ligação do tipo DIGITAL_INPUTS, INPUT_REGISTERS, COILS, HOLDING_REGISTERS
 */
 
 // Bibliotecas
@@ -32,7 +11,7 @@
 #include <ArduinoModbus.h>  // Lib Arduino Modbus (instalar via gerenciador)
 
 // Definicoes do escravo e da comunicao serial
-#define SLAVE_ID 1              // endereco do escravo Modbus RTU
+#define SLAVE_ID 10              // endereco do escravo Modbus RTU
 #define BAUDRATE 57600          // 57600 bps
 #define UART_CONFIG SERIAL_8N2  // 8 data bits, sem paridade, 2 stop bits
 

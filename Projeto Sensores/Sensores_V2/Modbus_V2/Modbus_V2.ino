@@ -1,24 +1,26 @@
-#include <Adafruit_ADS1X15.h>
-#include <max6675.h>
 #include <Modbus.h>
 #include <ModbusSerial.h>
+#include <Adafruit_ADS1X15.h>
+#include "max6675.h"
 
 // Defina o endereço e ganho do ADS1115
 #define ADS1115_ADDRESS 0x48
 #define ADS1115_GAIN GAIN_ONE
 
-// Define os pinos do Arduino
+// Define os pinos do Arduino p/ o Termopar(MAX6675)
 int thermoDO = 8;
 int thermoCS = 9;
 int thermoCLK = 10;
 
 MAX6675 thermocouple(thermoCLK, thermoCS, thermoDO);
 
-// Defina os registradores Modbus
+// Defina os registradores Modbus p/ ADS1115
 const int REG_A0 = 100;
 const int REG_A1 = 101;
 const int REG_A2 = 102;
 const int REG_A3 = 103;
+
+// Defina os registradores Modbus p/ MAX6675
 const int REG_TEMP = 104;
 
 // Crie um objeto ADS1115
@@ -47,17 +49,17 @@ void setup() {
 }
 
 void loop() {
-
-  float tempCelsius = thermocouple.readCelsius();
-
-  // Converta a temperatura para inteiro (opcional, ajuste como necessário)
-  int tempInt = tempCelsius * 1000;  // Multiplique por 10 para converter em graus Celsius inteiros
-
-  // Leia os valores analógicos do ADS1115
+  // Leia os valores analógicos do Conversor(ADS1115)
   int16_t valueA0 = ads.readADC_SingleEnded(0);
   int16_t valueA1 = ads.readADC_SingleEnded(1);
   int16_t valueA2 = ads.readADC_SingleEnded(2);
   int16_t valueA3 = ads.readADC_SingleEnded(3);
+
+  // Leia os valores do Termopar(MAX6675)
+  float tempCelsius = thermocouple.readCelsius();
+
+  // Converta a temperatura para inteiro (opcional, ajuste como necessário)
+  int tempInt = tempCelsius * 1000;  // Multiplique por 10 para converter em graus Celsius inteiros
 
   // Converta os valores para inteiros sem sinal de 16 bits
   uint16_t dataA0 = valueA0 + 2048;
@@ -70,12 +72,10 @@ void loop() {
   mb.Ireg(REG_A1, dataA1);
   mb.Ireg(REG_A2, dataA2);
   mb.Ireg(REG_A3, dataA3);
+
+  // Escreva a temperatura no registrador Modbus
   mb.Ireg(REG_TEMP, tempInt);
 
   // Lide com a comunicação Modbus
   mb.task();
-
-  // Tempo entre leituras
-  delay(1000);
-  
 }
