@@ -1,2 +1,0 @@
-Cola as pastas direto em: Documentos -> Arduino -> libraries
-Ex. Caminho: C:\Users\julie\OneDrive\Documentos\Arduino
