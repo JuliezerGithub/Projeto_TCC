@@ -3,7 +3,7 @@
 * Versão: 1
 * Data: 17/04/2024
 * Descrição: Código que faz o arduino ler dois sensores ao mesmo tempo utilizando
-* o ADS11154.
+* o ADS1115.
 *  - Sensor de corrente ACS712 - 5A
 *  - Sensor de temperatura MAX6675
 *******************************************************************************/
@@ -80,9 +80,9 @@ void loop()
     delay(500);
     Serial.print("Temperatura: ");              
     Serial.print(ktc.readCelsius());            //IMPRIME NO MONITOR SERIAL A TEMPERATURA MEDIDA EM ºC
-    Serial.println("°C");                     
+    Serial.println(" C");                     
     delay(500);                                 //INTERVALO DE 500 MILISSEGUNDOS
-    Serial.print("Tesão: ");              
+    Serial.print("Tesao: ");              
     Serial.print(pinoSensorV * f, 3);            //IMPRIME NO MONITOR SERIAL A TEMPERATURA MEDIDA EM ºC
     Serial.println("V");
     Serial.println("");                       
