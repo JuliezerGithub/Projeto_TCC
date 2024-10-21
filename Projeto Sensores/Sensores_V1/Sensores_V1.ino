@@ -17,10 +17,10 @@ ADS1115 ADS(0x48);
   
 //Variáveis Sensor Corrente
 
-#define CURRENT_CAL 18.40                       //VALOR DE CALIBRAÇÃO (DEVE SER AJUSTADO EM PARALELO COM UM MULTÍMETRO MEDINDO A CORRENTE DA CARGA)
+#define CURRENT_CAL 14.40                       //VALOR DE CALIBRAÇÃO (DEVE SER AJUSTADO EM PARALELO COM UM MULTÍMETRO MEDINDO A CORRENTE DA CARGA)
 const int pinoSensorAC = 0;                     //PINO ANALÓGICO EM QUE O SENSOR CORRENTE ESTÁ CONECTADO
 const int pinoSensorV = 0;                      //PINO ANALÓGICO EM QUE O SENSOR CORRENTE ESTÁ CONECTADO
-float ruido = 1.1595; ;//0.0595   1.1595        //RUÍDO PRODUZIDO NA SAÍDA DO SENSOR (DEVE SER AJUSTADO COM A CARGA DESLIGADA APÓS CARREGAMENTO DO CÓDIGO NO ARDUINO)
+float ruido = 0.08; ;//0.0595   1.1595        //RUÍDO PRODUZIDO NA SAÍDA DO SENSOR (DEVE SER AJUSTADO COM A CARGA DESLIGADA APÓS CARREGAMENTO DO CÓDIGO NO ARDUINO)
 
 EnergyMonitor emon1;                            //CRIA UMA INSTÂNCIA
 
@@ -52,12 +52,12 @@ void loop()
 {
   ADS.setGain(0);
 
-  int16_t val_0 = ADS.readADC(0);  
-  int16_t val_1 = ADS.readADC(1);  
+  //int16_t val_0 = ADS.readADC(0);  
+  //int16_t val_1 = ADS.readADC(1);  
   int16_t val_2 = ADS.readADC(2);  
   int16_t val_3 = ADS.readADC(3);  
-  int16_t pinoSensorAC = ADS.readADC(2);
-  int16_t pinoSensorV = ADS.readADC(0);
+  int16_t pinoSensorAC = ADS.readADC(0);
+  int16_t pinoSensorV = ADS.readADC(1);
   float f = ADS.toVoltage(1);  //  voltage factor
 
   //Serial.print("\tAnalog0: "); Serial.print(val_0); Serial.print('\t'); Serial.println(val_0 * f, 3);
@@ -77,16 +77,16 @@ void loop()
     Serial.print("Corrente medida: ");          
     Serial.print(currentDraw,4);                //IMPRIME NA SERIAL O VALOR DE CORRENTE MEDIDA COM 4 CASAS DECIMAIS
     Serial.println("A");                        
-    delay(500);
+    //delay(100);
     Serial.print("Temperatura: ");              
     Serial.print(ktc.readCelsius());            //IMPRIME NO MONITOR SERIAL A TEMPERATURA MEDIDA EM ºC
     Serial.println(" C");                     
-    delay(500);                                 //INTERVALO DE 500 MILISSEGUNDOS
+    //delay(100);                                 //INTERVALO DE 500 MILISSEGUNDOS
     Serial.print("Tesao: ");              
     Serial.print(pinoSensorV * f, 3);            //IMPRIME NO MONITOR SERIAL A TEMPERATURA MEDIDA EM ºC
     Serial.println("V");
     Serial.println("");                       
-    delay(500);
+    delay(100);
 
 }
 

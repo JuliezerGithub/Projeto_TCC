@@ -2,8 +2,8 @@ import minimalmodbus
 import time
 
 # Configurar o dispositivo Modbus
-instrument = minimalmodbus.Instrument('/dev/ttyUSB0', 1)  # Porta e ID do escravo
-instrument.serial.baudrate = 9600
+instrument = minimalmodbus.Instrument('COM7', 10)  # Porta e ID do escravo
+instrument.serial.baudrate = 38400
 instrument.serial.bytesize = 8
 instrument.serial.parity   = minimalmodbus.serial.PARITY_NONE
 instrument.serial.stopbits = 1

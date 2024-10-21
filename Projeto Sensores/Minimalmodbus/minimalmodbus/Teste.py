@@ -9,7 +9,7 @@ while True:
     #id_modbus = input("Digite o ID do escravo: ")
     # Leitura do registrador 0
     registrador = 0  # Registrador que queremos ler
-    numero_decimais = 1 # Número de casas decimais esperadas no valor
+    numero_decimais = 4 # Número de casas decimais esperadas no valor
 
     try:
         # Converte as entradas para inteiros
@@ -17,7 +17,7 @@ while True:
 
         # Define parâmetros para a comunicação (Porta Serial, ID do escravo)
         instrument = minimalmodbus.Instrument('COM7', id_modbus)
-        instrument.serial.baudrate = 9600  # Configura o baudrate se necessário
+        instrument.serial.baudrate = 38400  # Configura o baudrate se necessário
         instrument.serial.bytesize = 8
         instrument.serial.parity = serial.PARITY_NONE
         instrument.serial.stopbits = 1

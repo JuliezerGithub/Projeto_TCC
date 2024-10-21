@@ -13,10 +13,10 @@ while True:
 
         # Define parâmetros para a comunicação (Porta Serial, ID do escravo)
         instrument = minimalmodbus.Instrument('COM7', id_modbus)
-        instrument.serial.baudrate = 9600  # Configura o baudrate se necessário
+        instrument.serial.baudrate = 57600  # Configura o baudrate se necessário
         instrument.serial.bytesize = 8
         instrument.serial.parity = serial.PARITY_NONE
-        instrument.serial.stopbits = 1
+        instrument.serial.stopbits = 2
         instrument.serial.timeout = 1  # Timeout em segundos
 
         # Escreve no registrador

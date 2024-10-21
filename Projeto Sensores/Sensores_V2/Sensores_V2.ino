@@ -7,6 +7,7 @@
 * o ADS11154, e realiza a conexão via Modbus.
 *  - Sensor de corrente ACS712 - 5A
 *  - Sensor de temperatura MAX6675
+*  - Sensor de tensão 
 *******************************************************************************/
 #include <Modbus.h>
 #include <ModbusSerial.h>
@@ -73,12 +74,12 @@ void loop()
        mb.Ireg(SENSOR_IREG, analogRead(sensorPin));
    } 
 
-  int16_t val_0 = ADS.readADC(0);  
-  int16_t val_1 = ADS.readADC(1);  
-  int16_t val_2 = ADS.readADC(2);  
-  int16_t val_3 = ADS.readADC(3);  
-  int16_t pinoSensorAC = ADS.readADC(2);
-  int16_t pinoSensorV = ADS.readADC(0);
+  //int16_t val_0 = ADS.readADC(0);  
+  //int16_t val_1 = ADS.readADC(1);  
+  //int16_t val_2 = ADS.readADC(2);  
+  //int16_t val_3 = ADS.readADC(3);  
+  int16_t pinoSensorAC = ADS.readADC(0);
+  int16_t pinoSensorV = ADS.readADC(1);
   float f = ADS.toVoltage(1);                    //Voltage factor
 
   //Serial.print("\tAnalog0: "); Serial.print(val_0); Serial.print('\t'); Serial.println(val_0 * f, 3);

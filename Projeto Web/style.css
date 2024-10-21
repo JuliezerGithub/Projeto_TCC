@@ -1,8 +1,163 @@
-html, body {
-    height: 100%;
+@import url('https://fonts.googleapis.com/css2?family=outfit:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
 }
 
-.form-container{
-    max-width: 550px;
-    padding: 1rem;
+html, body {
+    height: 100vh; /* Preencher a altura total da viewport */
+}
+
+/*---------- Menu Lateral ----------*/
+nav.menu-lateral{
+    width: 80px;
+    height: 100%;
+    background-color: #111217;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #009933;
+
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+
+nav.menu-lateral.expandir{
+    width: 300px;
+}
+
+.btn-expandir{
+    width: 100%;
+    padding-left: 10px;
+}
+
+.btn-expandir > i{
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .2s;
+}
+
+ul li.ativo{
+    background-color: #009933;
+}
+
+ul li.item-menu:hover{
+    background: #009933;
+}
+
+ul li.item-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link{
+    margin-left: 40px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+body {
+    background-color: #111217;
+  }
+  .form-container {
+    background-color: #181B1F;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .form-container img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.btn-custom {
+  background-color: #009933;
+  border-color: #009933;
+}
+.btn-custom:hover {
+  background-color: #007a29;
+  border-color: #007a29;
+}
+
+/*---------- Cadastro de Usuarios ----------*/
+
+.tab {
+    display: flex;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #111217;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    color: white; /* Texto branco */
+}
+
+.tab div {
+    flex: 1;
+    padding: 10px;
+    background-color: #181B1F;
+    border: 1px solid #1D2025;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 80px;
+    color: white;
+}
+
+.tab i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+    margin-left: 80px;
+    color: white; /* Cor da flexinha */
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #181B1F;
+    border: 1px solid #1D2025;
+    margin-left: 80px;
+    color: white;
+}
+
+.tab-content.active {
+    display: block;
+    padding: 20px;
+    background-color: #181B1F;
+    border: 1px solid #1D2025;
+    margin-left: 110px;
+    margin-right: 10px;
+    color: white;
+}
+
+.rotate {
+    transform: rotate(90deg); /* Gira a flexinha */
 }

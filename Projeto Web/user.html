@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>User</title>
+        <link rel="stylesheet" href="style.css">
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+       <nav class="menu-lateral">
+                
+                <div class="btn-expandir">
+                        <i class="bi bi-list" id="btn-exp"></i>
+                </div> <!--btn-expandir-->
+
+
+                <ul>
+                        <li class="item-menu">
+                              <a href="#" id="home-link">
+                                <span class="icon"><i class="bi bi-house-door"></i></span>
+                                <span class="txt-link">Home</span>
+                              </a>  
+                        </li>
+                        <li class="item-menu">
+                                <a href="#" id="dashboard-link">
+                                  <span class="icon"><i class="bi bi-columns-gap"></i></span>
+                                  <span class="txt-link">Dashboard</span>
+                                </a>  
+                        </li>
+                        <li class="item-menu">
+                              <a href="#" id="devices-link">
+                                <span class="icon"><i class="bi bi-pc-display-horizontal"></i></span>
+                                <span class="txt-link">Devices</span>
+                              </a>  
+                        </li>
+                        <li class="item-menu">
+                                <a href="#" id="settings-link">
+                                  <span class="icon"><i class="bi bi-gear"></i></span>
+                                  <span class="txt-link">Settings</span>
+                                </a>  
+                        </li>
+                        <li class="item-menu ativo">
+                                <a href="#" id="user-link">
+                                  <span class="icon"><i class="bi bi-person"></i></span>
+                                  <span class="txt-link">User</span>
+                                </a>  
+                        </li>
+                </ul>
+
+       </nav><!--menu-lateral-->
+
+        <nav>
+                                
+                <div class="tab" onclick="toggleTabContent(0)">
+                        <div>Cadastro <i class="arrow">&#9654;</i></div>
+                </div>
+                <div class="tab-content">
+                        <h3>Cadastro de Usuário</h3>        
+                        <form id="cadastroForm">
+                        <label for="username">Nome de Usuário:</label><br>
+                        <input type="text" id="username" name="username"><br>
+                        <label for="email">Email:</label><br>
+                        <input type="email" id="email" name="email"><br>
+                        <label for="password">Senha:</label><br>
+                        <input type="password" id="password" name="password"><br>
+                        <button type="button" onclick="cadastrarUsuario()">Cadastrar</button>
+                        </form>
+                </div>
+
+                <div class="tab" onclick="toggleTabContent(1)">
+                        <div>Consulta <i class="arrow">&#9654;</i></div>
+                </div>
+                <div class="tab-content">
+                        <h3>Consulta de Usuário</h3>
+                        <input type="text" id="consultaUsername" placeholder="Digite o nome do usuário">
+                        <button type="button" onclick="consultarUsuario()">Consultar</button>
+                        <div id="resultadoConsulta"></div>
+                </div>
+
+                <div class="tab" onclick="toggleTabContent(2)">
+                        <div>Excluir <i class="arrow">&#9654;</i></div>
+                </div>
+                <div class="tab-content">
+                        <h3>Exclusão de Usuário</h3>
+                        <input type="text" id="exclusaoUsername" placeholder="Digite o nome do usuário para excluir">
+                        <button type="button" onclick="excluirUsuario()">Excluir</button>
+                </div>
+
+        </nav><!--Cadastro de Usuário-->
+       <script src="menu.js"></script>
+       <script src="cadastro.js"></script>
+</body>
+</html>
