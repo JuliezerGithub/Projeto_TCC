@@ -109,6 +109,31 @@ body {
 
 /*---------- Cadastro de Usuarios ----------*/
 
+/* Estilo geral */
+.cadastro {
+    margin: 0 80px auto;
+    width: 90%; /* Usando porcentagem para que a largura se ajuste automaticamente */
+    max-width: 1200px; /* Limite de largura máxima para telas grandes */
+    padding: 20px;
+    color:white;
+}
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #009933;
+}
+
+/* Ajuste para o menu de abas */
 .tab {
     display: flex;
     cursor: pointer;
@@ -116,8 +141,8 @@ body {
     background-color: #111217;
     justify-content: space-between;
     align-items: center;
-    margin-left: 20px;
-    color: white; /* Texto branco */
+    margin-top: 10px;
+    color: white;
 }
 
 .tab div {
@@ -128,15 +153,12 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 80px;
     color: white;
 }
 
 .tab i {
     font-size: 16px;
     transition: transform 0.3s ease;
-    margin-left: 80px;
-    color: white; /* Cor da flexinha */
 }
 
 .tab-content {
@@ -144,20 +166,123 @@ body {
     padding: 20px;
     background-color: #181B1F;
     border: 1px solid #1D2025;
-    margin-left: 80px;
+    margin-top: 5px;
     color: white;
+}
+
+.tab-content h3{
+    margin-bottom: 20px;
+}
+
+.tab-content label {
+    display: block;
+    margin-bottom: 10px; /* Espaço entre o label e o campo de entrada */
+    font-size: 16px;     /* Ajuste do tamanho da fonte */
+}
+
+.tab-content input {
+    width: 100%;         /* Faz o input ocupar toda a largura da div */
+    padding: 10px;       /* Adiciona um preenchimento interno para os campos */
+    margin-bottom: 20px; /* Espaço entre os campos */
+    font-size: 16px;     /* Ajuste do tamanho da fonte */
+    border: 1px solid #ccc;
+    border-radius: 5px;  /* Bordas arredondadas */
+}
+
+/* Botões*/
+.tab-content button {
+    background-color: #009933;  /* Cor verde */
+    color: white;               /* Cor do texto */
+    padding: 12px 20px;         /* Tamanho maior */
+    font-size: 16px;            /* Tamanho da fonte maior */
+    border: none;               /* Remove a borda */
+    border-radius: 5px;         /* Bordas arredondadas */
+    cursor: pointer;            /* Cursor de mão ao passar o mouse */
+    width: 100%;                /* Ocupa toda a largura em telas menores */
+    margin-top: 10px;           /* Espaçamento no topo */
+}
+
+/* Estilo para o hover (quando o mouse passa sobre o botão) */
+.tab-content button:hover {
+    background-color: #218838;  /* Cor verde mais escura ao passar o mouse */
 }
 
 .tab-content.active {
+    flex-direction: column; /* Muda as abas para uma coluna em vez de linha */
     display: block;
-    padding: 20px;
-    background-color: #181B1F;
-    border: 1px solid #1D2025;
-    margin-left: 110px;
-    margin-right: 10px;
-    color: white;
+    margin-top: 5px;
 }
 
-.rotate {
-    transform: rotate(90deg); /* Gira a flexinha */
+/*Seletor*/
+
+#novoPerfil {
+background-color: #009933;
+color: white; /* Para melhorar a legibilidade */
+border: 1px solid #1D2025;
+padding: 5px;
+border-radius: 4px;
+}
+
+#novoPerfil option {
+color: black; /* Caso queira alterar a cor do texto das opções */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .cadastro{
+        flex-direction: column; /* Muda as abas para uma coluna em vez de linha */
+        text-align: center;     /* Centraliza o conteúdo */
+    }
+
+    .tab {
+        flex-direction: column; /* Muda as abas para uma coluna em vez de linha */
+        text-align: center;     /* Centraliza o conteúdo */
+    }
+
+    .tab div {
+        margin: 5px 0;          /* Margens menores nas abas */
+        padding: 15px;
+    }
+
+    .tab-content {
+        padding: 15px;          /* Reduz o espaçamento do conteúdo nas telas menores */
+    }
+
+    /*Botão*/
+    input, button {
+        width: 100%;            /* Inputs e botões ocupam a largura total da tela */
+        margin-top: 10px;
+    }
+    .tab-content button {
+        width: 100%;  /* Botão ocupa toda a largura em telas menores */
+        padding: 15px;
+    }
+
+    .tab-content input {
+        padding: 12px;  /* Maior preenchimento interno para telas menores */
+    }
+}
+
+/* Para telas extra pequenas (smartphones) */
+@media (max-width: 480px) {
+    .cadastro{
+        padding: 10px;
+        font-size: 14px;        /* Reduz o tamanho da fonte em telas pequenas */
+    }
+    .tab-content {
+        padding: 10px;
+        font-size: 14px;        /* Reduz o tamanho da fonte em telas pequenas */
+    }
+
+    .tab i {
+        font-size: 14px;        /* Ajusta o tamanho da flecha */
+    }
+
+    h3, label {
+        font-size: 16px;        /* Ajusta o tamanho dos títulos e rótulos */
+    }
+
+    input, button {
+        font-size: 14px;        /* Ajusta o tamanho dos campos de entrada e botões */
+    }
 }

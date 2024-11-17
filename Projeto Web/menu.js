@@ -64,14 +64,3 @@ document.getElementById('settings-link').addEventListener('click', function(even
     event.preventDefault(); // Evita o comportamento padrão do link
     goToSettings(); // Chama a função que redireciona
 });
-
-// Função que redireciona para a página user.html
-function goToUser() {
-    window.location.href = 'user.html'; // Redireciona para dashboard.html
-}
-
-// Captura o clique no link com id 'user-link'
-document.getElementById('user-link').addEventListener('click', function(event) {
-    event.preventDefault(); // Evita o comportamento padrão do link
-    goToUser(); // Chama a função que redireciona
-});

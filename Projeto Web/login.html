@@ -11,7 +11,6 @@
 <body class="d-flex align-items-center justify-content-center py-4">
     <main class="form-container">
         <form onsubmit="return redirectToHome()">
-            <!-- Caminho atualizado para a pasta resource/img -->
             <img src="resources/img/meu-logo.png" class="mb-4" height="57" width="72"/> 
             <h1 class="h3 mb-3 fw-normal text-white">Bem Vindo</h1>
             <div class="col-md-12">
@@ -33,6 +32,36 @@
         </form>
     </main>
 
+    <script>
+        async function login() {
+          const username = document.getElementById('txtUsername').value;
+          const password = document.getElementById('txtPassword').value;
+  
+          try {
+            const response = await fetch('http://localhost:3001/login', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({ username, password })
+            });
+  
+            if (!response.ok) {
+              const errorData = await response.json();
+              alert(errorData.error); // Exibe o erro
+              return false; // Impede o envio do formulário
+            }
+  
+            const result = await response.json();
+            alert(result.message); // Exibe a mensagem de sucesso
+            window.location.href = "home.html"; // Redireciona para home.html
+            return false; // Impede o envio do formulário
+          } catch (error) {
+            alert('Erro ao fazer login: ' + error.message);
+            return false; // Impede o envio do formulário
+          }
+        }
+    </script>
     <script>
       function redirectToHome() {
         // Redireciona para home.html
