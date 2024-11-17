@@ -1,0 +1,77 @@
+[
+    {
+        "id": "e6ac7059474ce95f",
+        "type": "tab",
+        "label": "Teste Conexão Arduino",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "b5c9b3cd9af2fde2",
+        "type": "inject",
+        "z": "e6ac7059474ce95f",
+        "name": "LED_ON",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 160,
+        "y": 40,
+        "wires": [
+            [
+                "b4c0c10305511981"
+            ]
+        ]
+    },
+    {
+        "id": "f691b8db3a87cf56",
+        "type": "inject",
+        "z": "e6ac7059474ce95f",
+        "name": "LED_OFF",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 160,
+        "y": 120,
+        "wires": [
+            [
+                "b4c0c10305511981"
+            ]
+        ]
+    },
+    {
+        "id": "b4c0c10305511981",
+        "type": "arduino out",
+        "z": "e6ac7059474ce95f",
+        "name": "LED_13",
+        "pin": "13",
+        "state": "OUTPUT",
+        "arduino": "e92fa383d1b46dfc",
+        "x": 400,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "e92fa383d1b46dfc",
+        "type": "arduino-board",
+        "device": "COM6"
+    }
+]

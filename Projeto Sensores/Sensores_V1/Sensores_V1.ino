@@ -34,7 +34,7 @@ MAX6675 ktc(ktcCLK, ktcCS, ktcSO);              //CRIA UMA INSTÂNCIA UTILIZANDO
 
 void setup() 
 {
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial.println(__FILE__);
   //Serial.print("ADS1X15_LIB_VERSION: ");
   //Serial.println(ADS1X15_LIB_VERSION);

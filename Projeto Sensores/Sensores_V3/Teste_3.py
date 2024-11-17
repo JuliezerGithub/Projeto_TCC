@@ -63,7 +63,7 @@ else:
 
         try:
             # Define parâmetros para a comunicação (Porta Serial, ID do escravo)
-            instrument = minimalmodbus.Instrument('COM6', id_modbus)
+            instrument = minimalmodbus.Instrument('COM8', id_modbus)
             instrument.serial.baudrate = 9600  # Configura o baudrate se necessário
             instrument.serial.bytesize = 8
             instrument.serial.parity = serial.PARITY_NONE
