@@ -11,14 +11,14 @@
 </head>
 <body>
 
-       <nav class="menu-lateral">
+       <nav class="menu-lateral col-auto">
                 
                 <div class="btn-expandir">
                         <i class="bi bi-list" id="btn-exp"></i>
                 </div> <!--btn-expandir-->
 
 
-                <ul>
+                <ul class="nav flex-column pt-3">
                         <li class="item-menu ativo">
                               <a href="#" id="home-link">
                                 <span class="icon"><i class="bi bi-house-door"></i></span>
@@ -47,6 +47,27 @@
                 </ul>
 
        </nav><!--menu-lateral-->
+       <main>
+        <div class="container-fluids">
+                <div class="cards">
+                        <div class="cards-header">
+                                <div class="cards-top">
+                                        <div class="cards-number">
+                                                <p class="numberdrives">2</p>
+                                                <p class="subnumber">Dispositivos conectados</p>
+                                        </div>
+                                        <div class="card-icons">
+                                                <i class="bi bi-hdd-network"></i>
+                                        </div>
+                                </div>
+                                <div class="cards-type">
+                                        <p class="ticket">Dispositivos totais 6</p>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+       </main>
        <script src="menu.js"></script>
 </body>
 </html>

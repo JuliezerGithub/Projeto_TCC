@@ -8,31 +8,68 @@
 
 html, body {
     height: 100vh; /* Preencher a altura total da viewport */
+    font-size: 16px;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111217;
+    margin: 0
+  }
+  .form-container {
+    background-color: #181B1F;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .form-container img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+main {
+    margin-left: 80px; /* Garante que o conteúdo comece após a sidebar */
+    width: calc(100% - 80px); /* Calcula o espaço restante, considerando a sidebar */
+    min-height: 100vh; /* Ocupa toda a altura da tela */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding no cálculo de largura */
 }
 
 /*---------- Menu Lateral ----------*/
 nav.menu-lateral{
+    
     width: 80px;
     height: 100%;
     background-color: #111217;
+    color: #fff;
     padding: 40px 0 40px 1%;
     box-shadow: 3px 0 0 #009933;
-
     position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    padding-top: 20px;
     z-index: 1000;
     top: 0;
-    left: 0;
+    left: 0px;
     overflow: hidden;
     transition: .5s;
 }
 
 nav.menu-lateral.expandir{
-    width: 300px;
+    width: 240px;
 }
 
 .btn-expandir{
     width: 100%;
-    padding-left: 10px;
+    padding-left: 15px;
 }
 
 .btn-expandir > i{
@@ -83,20 +120,6 @@ ul li.item-menu a .icon > i{
     font-size: 30px;
     margin-left: 10px;
 }
-body {
-    background-color: #111217;
-  }
-  .form-container {
-    background-color: #181B1F;
-    padding: 40px;
-    border-radius: 15px;
-    max-width: 400px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .form-container img {
-    display: block;
-    margin: 0 auto 20px;
-}
 
 .btn-custom {
   background-color: #009933;
@@ -109,14 +132,37 @@ body {
 
 /*---------- Cadastro de Usuarios ----------*/
 
+/* Centralizar o conteúdo principal */
+nav.cadastro {
+    margin-left: 90px; /* Para evitar sobreposição com o menu lateral */
+    padding: 5px;
+    width: calc(100% - 270px);  /*Responsivo com base no tamanho do menu */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #111217;
+    border-radius: 10px;
+    border: 1px solid #1D2025;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 /* Estilo geral */
 .cadastro {
-    margin: 0 80px auto;
+    margin: 10px 80px auto;
     width: 90%; /* Usando porcentagem para que a largura se ajuste automaticamente */
     max-width: 1200px; /* Limite de largura máxima para telas grandes */
     padding: 20px;
     color:white;
 }
+
+.device {
+    margin: 10px 80px auto;
+    width: 90%; /* Usando porcentagem para que a largura se ajuste automaticamente */
+    max-width: 1200px; /* Limite de largura máxima para telas grandes */
+    padding: 20px;
+    color:white;
+}
+
 table {
     margin-top: 20px;
     border-collapse: collapse;
@@ -189,6 +235,51 @@ th {
     border-radius: 5px;  /* Bordas arredondadas */
 }
 
+/*--------Cards--------*/
+.container-fluids{
+    width: 100%;
+}
+
+.cards{
+    width: 100%;
+    display: flex;
+    padding: 1rem 0 !important;
+}
+
+.cards .cards-header{ /*Engloba todo o card*/
+    width: 300px;
+    background-color: #007a29;
+    display: block;
+    border-radius: 4px;
+}
+
+.cards .cards-header .cards-top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem !important;
+}
+
+.cards .cards-header .cards-top .cards-number{
+    display: block;
+}
+
+.cards .cards-header .cards-top .cards-number p{
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #eee;
+}
+
+.cards .cards-header .cards-top .cards-number p.numberdrives{
+    font-size: 2.1rem;
+    font-weight: 600;
+}
+
+.cards .cards-header .cards-top .cards-number p.subnumber{
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/*-------Elementos de Interação com o Usuário---------*/
 /* Botões*/
 .tab-content button {
     background-color: #009933;  /* Cor verde */
@@ -200,6 +291,11 @@ th {
     cursor: pointer;            /* Cursor de mão ao passar o mouse */
     width: 100%;                /* Ocupa toda a largura em telas menores */
     margin-top: 10px;           /* Espaçamento no topo */
+}
+/* Flexinhas*/
+.rotate {
+    transform: rotate(90deg); /* Gira a flecha 90 graus */
+    transition: transform 0.3s ease; /* Faz a rotação ser suave */
 }
 
 /* Estilo para o hover (quando o mouse passa sobre o botão) */
