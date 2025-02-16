@@ -1,0 +1,430 @@
+@import url('https://fonts.googleapis.com/css2?family=outfit:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+html, body {
+    height: 100vh; /* Preencher a altura total da viewport */
+    font-size: 16px;
+}
+
+body {
+
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #222325;
+    margin: 0
+  }
+  .form-container {
+    background-color: #181B1F;
+    padding: 40px;
+    border-radius: 15px;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .form-container img {
+    display: block;
+    margin: 0 auto 20px;
+}
+
+main {
+    margin-left: 80px; /* Garante que o conteúdo comece após a sidebar */
+    width: calc(100% - 80px); /* Calcula o espaço restante, considerando a sidebar */
+    min-height: 100vh; /* Ocupa toda a altura da tela */
+    padding: 20px; /* Espaçamento interno */
+    box-sizing: border-box; /* Inclui o padding no cálculo de largura */
+}
+
+/*---------- Menu Lateral ----------*/
+nav.menu-lateral{
+    
+    width: 80px;
+    height: 100%;
+    background-color: #111217;
+    color: #fff;
+    padding: 40px 0 40px 1%;
+    box-shadow: 3px 0 0 #009933;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    padding-top: 20px;
+    z-index: 1000;
+    top: 0;
+    left: 0px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+nav.menu-lateral.expandir{
+    width: 240px;
+}
+
+.btn-expandir{
+    width: 100%;
+    padding-left: 15px;
+}
+
+.btn-expandir > i{
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+ul{
+    height: 100%;
+    list-style-type: none;
+}
+
+ul li.item-menu{
+    transition: .2s;
+}
+
+ul li.ativo{
+    background-color: #009933;
+}
+
+ul li.item-menu:hover{
+    background: #009933;
+}
+
+ul li.item-menu a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px 4%;
+    display: flex;
+    margin-bottom: 20px;
+    line-height: 40px;
+}
+
+ul li.item-menu a .txt-link{
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+
+nav.menu-lateral.expandir .txt-link{
+    margin-left: 40px;
+    opacity: 1;
+}
+
+ul li.item-menu a .icon > i{
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.btn-custom {
+  background-color: #009933;
+  border-color: #009933;
+}
+.btn-custom:hover {
+  background-color: #007a29;
+  border-color: #007a29;
+}
+
+/*---------- Cadastro de Usuarios ----------*/
+
+/* Centralizar o conteúdo principal */
+nav.cadastro {
+    margin-left: 90px; /* Para evitar sobreposição com o menu lateral */
+    padding: 5px;
+    width: calc(100% - 270px);  /*Responsivo com base no tamanho do menu */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #111217;
+    border-radius: 10px;
+    border: 1px solid #1D2025;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+/* Estilo geral */
+.cadastro {
+    margin: 10px 80px auto;
+    width: 90%; /* Usando porcentagem para que a largura se ajuste automaticamente */
+    max-width: 1200px; /* Limite de largura máxima para telas grandes */
+    padding: 20px;
+    color:white;
+}
+
+.device {
+    margin: 10px 80px auto;
+    width: 90%; /* Usando porcentagem para que a largura se ajuste automaticamente */
+    max-width: 1200px; /* Limite de largura máxima para telas grandes */
+    padding: 20px;
+    color:white;
+}
+
+table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #009933;
+}
+
+/* Ajuste para o menu de abas */
+.tab {
+    display: flex;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #111217;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    color: white;
+}
+
+.tab div {
+    flex: 1;
+    padding: 10px;
+    background-color: #181B1F;
+    border: 1px solid #1D2025;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.tab i {
+    font-size: 16px;
+    transition: transform 0.3s ease;
+}
+
+.tab-content {
+    display: none;
+    padding: 20px;
+    background-color: #181B1F;
+    border: 1px solid #1D2025;
+    margin-top: 5px;
+    color: white;
+}
+
+.tab-content h3{
+    margin-bottom: 20px;
+}
+
+.tab-content label {
+    display: block;
+    margin-bottom: 10px; /* Espaço entre o label e o campo de entrada */
+    font-size: 16px;     /* Ajuste do tamanho da fonte */
+}
+
+.tab-content input {
+    width: 100%;         /* Faz o input ocupar toda a largura da div */
+    padding: 10px;       /* Adiciona um preenchimento interno para os campos */
+    margin-bottom: 20px; /* Espaço entre os campos */
+    font-size: 16px;     /* Ajuste do tamanho da fonte */
+    border: 1px solid #ccc;
+    border-radius: 5px;  /* Bordas arredondadas */
+}
+
+/*--------Cards--------*/
+.container-fluids{
+    width: 100%;
+}
+
+.cards{
+    width: 100%;
+    display: flex;
+    padding: 1rem 0 !important;
+}
+
+.cards .cards-header{ /*Engloba todo o card*/
+    width: 300px;
+    background-color: #007a29;
+    display: block;
+    border-radius: 4px;
+}
+
+.cards .cards-header .cards-top{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem !important;
+}
+
+/*
+Explicação padding element1 e element2
+element1 = top e bottom
+element2 = right e left
+*/
+
+.cards .cards-header .cards-top .cards-number{
+    display: block;
+}
+
+.cards .cards-header .cards-top .cards-number p{
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #eee;
+}
+
+.cards .cards-header .cards-top .cards-number p.numberdrives{
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.cards .cards-header .cards-top .cards-number p.subnumber{
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.cards .cards-header .cards-top .cards-number p.atualizado{
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+.cards .cards-header .cards-top .cards-icons{
+    background-color: #007a29;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .cards-header .cards-top .cards-icons i{
+    font-size: 5rem;
+    color: #1D2025;
+    background-color: #007a29;
+}
+
+.cards .cards-header .cards-type{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #069034;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px; 
+}
+
+.cards .cards-header .cards-type p{
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.cards .cards-header .cards-type .ticket{
+    font-size: 1rem;
+    padding: 4px;
+    color: #1D2025;
+    font-weight: 500;
+}
+
+/*-------Elementos de Interação com o Usuário---------*/
+/* Botões*/
+.tab-content button {
+    background-color: #009933;  /* Cor verde */
+    color: white;               /* Cor do texto */
+    padding: 12px 20px;         /* Tamanho maior */
+    font-size: 16px;            /* Tamanho da fonte maior */
+    border: none;               /* Remove a borda */
+    border-radius: 5px;         /* Bordas arredondadas */
+    cursor: pointer;            /* Cursor de mão ao passar o mouse */
+    width: 100%;                /* Ocupa toda a largura em telas menores */
+    margin-top: 10px;           /* Espaçamento no topo */
+}
+/* Flexinhas*/
+.rotate {
+    transform: rotate(90deg); /* Gira a flecha 90 graus */
+    transition: transform 0.3s ease; /* Faz a rotação ser suave */
+}
+
+/* Estilo para o hover (quando o mouse passa sobre o botão) */
+.tab-content button:hover {
+    background-color: #218838;  /* Cor verde mais escura ao passar o mouse */
+}
+
+.tab-content.active {
+    flex-direction: column; /* Muda as abas para uma coluna em vez de linha */
+    display: block;
+    margin-top: 5px;
+}
+
+/*Seletor*/
+
+#novoPerfil {
+background-color: #009933;
+color: white; /* Para melhorar a legibilidade */
+border: 1px solid #1D2025;
+padding: 5px;
+border-radius: 4px;
+}
+
+#novoPerfil option {
+color: black; /* Caso queira alterar a cor do texto das opções */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .cadastro{
+        flex-direction: column; /* Muda as abas para uma coluna em vez de linha */
+        text-align: center;     /* Centraliza o conteúdo */
+    }
+
+    .tab {
+        flex-direction: column; /* Muda as abas para uma coluna em vez de linha */
+        text-align: center;     /* Centraliza o conteúdo */
+    }
+
+    .tab div {
+        margin: 5px 0;          /* Margens menores nas abas */
+        padding: 15px;
+    }
+
+    .tab-content {
+        padding: 15px;          /* Reduz o espaçamento do conteúdo nas telas menores */
+    }
+
+    /*Botão*/
+    input, button {
+        width: 100%;            /* Inputs e botões ocupam a largura total da tela */
+        margin-top: 10px;
+    }
+    .tab-content button {
+        width: 100%;  /* Botão ocupa toda a largura em telas menores */
+        padding: 15px;
+    }
+
+    .tab-content input {
+        padding: 12px;  /* Maior preenchimento interno para telas menores */
+    }
+}
+
+/* Para telas extra pequenas (smartphones) */
+@media (max-width: 480px) {
+    .cadastro{
+        padding: 10px;
+        font-size: 14px;        /* Reduz o tamanho da fonte em telas pequenas */
+    }
+    .tab-content {
+        padding: 10px;
+        font-size: 14px;        /* Reduz o tamanho da fonte em telas pequenas */
+    }
+
+    .tab i {
+        font-size: 14px;        /* Ajusta o tamanho da flecha */
+    }
+
+    h3, label {
+        font-size: 16px;        /* Ajusta o tamanho dos títulos e rótulos */
+    }
+
+    input, button {
+        font-size: 14px;        /* Ajusta o tamanho dos campos de entrada e botões */
+    }
+}

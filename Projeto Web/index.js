@@ -104,6 +104,20 @@ app.post('/login', async (req, res) => {
     }
 });
 
+// Controle das abas:
+function toggleTabContent(index) {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    
+    // Remove todas as classes ativas
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+    
+    // Adiciona classe ativa ao item clicado
+    tabs[index].classList.add('active');
+    contents[index].classList.add('active');
+}
+
 // Iniciar o servidor
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);

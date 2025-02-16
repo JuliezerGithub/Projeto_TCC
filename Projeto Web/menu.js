@@ -13,13 +13,17 @@ menuItem.forEach((item)=>
     item.addEventListener('click', selectLink)
 )
 
-//Expandir o menu
-var btnExp = document.querySelector('#btn-exp')
-var menuSide = document.querySelector('.menu-lateral')
+// //Expandir o menu
+// var btnExp = document.querySelector('#btn-exp')
+// var menuSide = document.querySelector('.menu-lateral')
 
-btnExp.addEventListener('click', function(){
-    menuSide.classList.toggle('expandir')
-})
+// btnExp.addEventListener('click', function(){
+//     menuSide.classList.toggle('expandir')
+// })
+document.getElementById('btn-exp').addEventListener('click', function() {
+    const menuLateral = document.querySelector('.menu-lateral');
+    menuLateral.classList.toggle('col-auto');
+});
 
 // Função que redireciona para a página home.html
 function goToHome() {
