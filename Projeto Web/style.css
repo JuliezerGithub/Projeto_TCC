@@ -15,7 +15,7 @@ body {
 
 /*---------- Menu Lateral ----------*/
 .menu-lateral {
-    width: 250px;
+    width: 200px;
     background-color: #2c3e50;
     color: #fff;
     transition: width 0.3s ease;
@@ -26,7 +26,7 @@ body {
 }
 
 .menu-lateral.col-auto {
-    width: 80px;
+    width: 60px;
 }
 
 .menu-lateral.col-auto .txt-link {
@@ -99,44 +99,82 @@ main {
 }
 
 .menu-lateral.col-auto + main {
-    margin-left: 80px;
+    margin-left: 60px;
 }
 
 /*---------- Cards ----------*/
-.container-fluids {
-    width: 100%;
-    padding: 20px;
+/* Contêiner principal dos cards */
+.container-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os cards quebrem para a próxima linha se necessário */
+    justify-content: flex-start; /* Mantém os cards alinhados à esquerda */
+    gap: 150px; /* Adiciona espaçamento entre os cards */
+    padding: 20px 100px;
 }
 
+/* Ajuste para os containers individuais */
+.container-fluids {
+    width: auto; /* Mantém o tamanho baseado no conteúdo */
+}
+
+/* Estilo dos cards */
 .cards {
-    background-color: #fff;
+    background-color: #a2d1ff;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-bottom: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 300px; /* Define um tamanho fixo para os cards */
 }
 
-.cards:hover {
+.cards2 {
+    background-color: #a2ffaa;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px; /* Define um tamanho fixo para os cards */
+}
+
+.cards3 {
+    background-color: #fff6a2;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px; /* Define um tamanho fixo para os cards */
+}
+
+.cards4 {
+    background-color: #ffada2;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 280px; /* Define um tamanho fixo para os cards */
+}
+
+/* .cards:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.cards-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-}
+} */
 
 .cards-top {
     display: flex;
-    align-items: center;
+    align-items: center; /* Mantém os elementos alinhados horizontalmente */
     gap: 15px;
+    width: 100%;
+}
+
+.cards-icons {
+    font-size: 4rem;
+    color: #2c3e50;
+    order: 1; /* Move o ícone para a direita */
 }
 
 .cards-number {
-    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .cards-number .numberdrives {
@@ -151,19 +189,45 @@ main {
 }
 
 .cards-number .atualizado {
+    padding: 2px;
     font-size: 0.8em;
     color: #999;
 }
 
-.cards-icons {
-    font-size: 2.5em;
-    color: #2c3e50;
+.cards-type {
+    width: 100%;
+    text-align: left; /* Garante que o texto do tipo fique alinhado à esquerda */
+    margin-top: 10px;
 }
 
 .cards-type .ticket {
-    font-size: 0.9em;
-    color: #666;
-    background-color: #f4f4f9;
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #a2d1ff;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.cards-type .ticket2 {
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #a2ffaa;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.cards-type .ticket3 {
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #fff6a2;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.cards-type .ticket4 {
+    font-size: 1rem;
+    color: #2c3e50;
+    background-color: #ffada2;
     padding: 5px 10px;
     border-radius: 5px;
 }

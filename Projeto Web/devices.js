@@ -26,22 +26,23 @@ async function cadastrarUsuario() {
 function toggleTabContent(index) {
     const tabContents = document.querySelectorAll('.tab-content');
     const arrows = document.querySelectorAll('.tab i');
-    
-    // Fecha todos os conteúdos abertos e reseta a flexinha
-    tabContents.forEach((content, idx) => {
-        if (idx === index) {
-            content.classList.toggle('active'); // Mostra ou esconde o conteúdo
-        } else {
-            content.classList.remove('active'); // Fecha outros
-        }
-    });
-    
-    // Ajusta o ícone de flexinha
-    arrows.forEach((arrow, idx) => {
-        if (idx === index) {
-            arrow.classList.toggle('rotate'); // Gira a flexinha
-        } else {
-            arrow.classList.remove('rotate'); // Reseta a flexinha de outros
-        }
-    });
+    const currentContent = tabContents[index];
+    const currentArrow = arrows[index];
+
+    // Verifica se o conteúdo atual já está aberto
+    if (currentContent.classList.contains('active')) {
+        // Fecha o conteúdo e reseta a flexinha
+        currentContent.classList.remove('active');
+        currentArrow.classList.remove('rotate');
+    } else {
+        // Fecha todos os conteúdos abertos e reseta as flexinhas
+        tabContents.forEach((content, idx) => {
+            content.classList.remove('active');
+            arrows[idx].classList.remove('rotate'); // Corrigido aqui
+        });
+
+        // Abre o conteúdo atual e gira a flexinha
+        currentContent.classList.add('active');
+        currentArrow.classList.add('rotate');
+    }
 }

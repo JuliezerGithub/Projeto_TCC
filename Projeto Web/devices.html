@@ -48,86 +48,83 @@
 
        </nav><!--menu-lateral-->
        <main>
-        <nav class="cadastro">
+            <h1>Dispositivos</h1>
                 <div class="device">
-                        <h1>Dispositivos</h1>            
-                <div class="tab" onclick="toggleTabContent(0)">
+                                    
+                        <div class="tab" onclick="toggleTabContent(0)">
+                                <div>Cadastro <i class="arrow">&#9654;</i></div>
+                        </div>
+                        <div class="tab-content">
+                                <h3>Cadastro de Dispositivos</h3> 
+                        
+                                <form id="cadastroForm">
+                                <label for="devicename">Nome do Dispositivo:</label><br>
+                                <input type="text" id="devicename" name="devicename"><br>
+                                <label for="id">ID:</label><br>
+                                <input type="id" id="id" name="id"><br>
+                                <label for="porta">Porta USB:</label><br>
+                                <input type="porta" id="porta" name="porta" placeholder="Para dispositivos Windows. ex: COM6 | Para dispositivos Linux. ex: /dev/ttyS0"><br>
+                                <button type="button" onclick="cadastrarDispositivo()">Cadastrar</button>
+                                </form>
+                        </div>        
+                        <div class="tab" onclick="toggleTabContent(1)">
+                                <div>Consulta <i class="arrow">&#9654;</i></div>
+                        </div>
+                        <div class="tab-content">
+                                <h3>Consulta de Dispositivos</h3>
+                                <input type="text" id="consultaDevice" placeholder="Digite o nome do Dispositivos">
+                                <button type="button" onclick="consultarDevice()">Consultar Dispositivos</button>
+                                <button type="button" onclick="consultarTodosDevices()">Consultar Todos Dispositivos</button>
+                                <div id="resultadoConsulta"></div>
+                        </div>
+                        
+                        <div class="tab" onclick="toggleTabContent(2)">
+                                <div>Excluir <i class="arrow">&#9654;</i></div>
+                        </div>
+                        <div class="tab-content">
+                                <h3>Exclusão de Dispositivos</h3>
+                                <input type="text" id="exclusaoDevice" placeholder="Digite o nome do Dispositivos para excluir">
+                                <button type="button" onclick="excluirDevice()">Excluir</button>
+                </div>
+        <!--cadastro de dispositivos-->
+            <h1>Sensores</h1>
+                <div class="device">
+                <div class="tab" onclick="toggleTabContent(3)">
                         <div>Cadastro <i class="arrow">&#9654;</i></div>
                 </div>
                 <div class="tab-content">
-                        <h3>Cadastro de Dispositivos</h3> 
+                        <h3>Cadastro de Sensores</h3> 
                 
                         <form id="cadastroForm">
-                        <label for="devicename">Nome do Dispositivo:</label><br>
-                        <input type="text" id="devicename" name="devicename"><br>
-                        <label for="id">ID:</label><br>
-                        <input type="id" id="id" name="id"><br>
-                        <label for="porta">Porta USB:</label><br>
-                        <input type="porta" id="porta" name="porta" placeholder="Para dispositivos Windows. ex: COM6 | Para dispositivos Linux. ex: /dev/ttyS0"><br>
-                        <button type="button" onclick="cadastrarDispositivo()">Cadastrar</button>
+                        <label for="sensorname">Nome do Sensor:</label><br>
+                        <input type="text" id="sensorname" name="sensorname"><br>
+                        <label for="tag">Tag:</label><br>
+                        <input type="tag" id="tag" name="tag"><br>
+                        <label for="pino">Pino Conexão:</label><br>
+                        <input type="pino" id="pino" name="pino" placeholder="Digite o pino onde está conectado o sensor"><br>
+                        <button type="button" onclick="cadastrarSensor()">Cadastrar</button>
                         </form>
                 </div>        
-                <div class="tab" onclick="toggleTabContent(1)">
+                <div class="tab" onclick="toggleTabContent(4)">
                         <div>Consulta <i class="arrow">&#9654;</i></div>
                 </div>
                 <div class="tab-content">
-                        <h3>Consulta de Dispositivos</h3>
-                        <input type="text" id="consultaDevice" placeholder="Digite o nome do Dispositivos">
-                        <button type="button" onclick="consultarDevice()">Consultar Dispositivos</button>
-                        <button type="button" onclick="consultarTodosDevices()">Consultar Todos Dispositivos</button>
+                        <h3>Consulta de Sensores</h3>
+                        <input type="text" id="consultaSensor" placeholder="Digite a Tag do Sensor">
+                        <button type="button" onclick="consultarSensor()">Consultar Dispositivos</button>
+                        <button type="button" onclick="consultarTodosSensores()">Consultar Todos Sensores</button>
                         <div id="resultadoConsulta"></div>
                 </div>
                 
-                <div class="tab" onclick="toggleTabContent(2)">
+                <div class="tab" onclick="toggleTabContent(5)">
                         <div>Excluir <i class="arrow">&#9654;</i></div>
                 </div>
                 <div class="tab-content">
-                        <h3>Exclusão de Dispositivos</h3>
-                        <input type="text" id="exclusaoDevice" placeholder="Digite o nome do Dispositivos para excluir">
-                        <button type="button" onclick="excluirDevice()">Excluir</button>
+                        <h3>Exclusão de Sensores</h3>
+                        <input type="text" id="exclusaoSensores" placeholder="Digite a Tag do sensor para excluir">
+                        <button type="button" onclick="excluirSensor()">Excluir</button>
                 </div>
-
-       </nav><!--cadastro de dispositivos-->
-       <nav class="cadastro">
-        <div class="device">
-                <h1>Sensores</h1>            
-        <div class="tab" onclick="toggleTabContent(0)">
-                <div>Cadastro <i class="arrow">&#9654;</i></div>
-        </div>
-        <div class="tab-content">
-                <h3>Cadastro de Dispositivos</h3> 
-        
-                <form id="cadastroForm">
-                <label for="devicename">Nome do Dispositivo:</label><br>
-                <input type="text" id="devicename" name="devicename"><br>
-                <label for="id">ID:</label><br>
-                <input type="id" id="id" name="id"><br>
-                <label for="porta">Porta USB:</label><br>
-                <input type="porta" id="porta" name="porta" placeholder="Para dispositivos Windows. ex: COM6 | Para dispositivos Linux. ex: /dev/ttyS0"><br>
-                <button type="button" onclick="cadastrarDispositivo()">Cadastrar</button>
-                </form>
-        </div>        
-        <div class="tab" onclick="toggleTabContent(1)">
-                <div>Consulta <i class="arrow">&#9654;</i></div>
-        </div>
-        <div class="tab-content">
-                <h3>Consulta de Dispositivos</h3>
-                <input type="text" id="consultaDevice" placeholder="Digite o nome do Dispositivos">
-                <button type="button" onclick="consultarDevice()">Consultar Dispositivos</button>
-                <button type="button" onclick="consultarTodosDevices()">Consultar Todos Dispositivos</button>
-                <div id="resultadoConsulta"></div>
-        </div>
-        
-        <div class="tab" onclick="toggleTabContent(2)">
-                <div>Excluir <i class="arrow">&#9654;</i></div>
-        </div>
-        <div class="tab-content">
-                <h3>Exclusão de Dispositivos</h3>
-                <input type="text" id="exclusaoDevice" placeholder="Digite o nome do Dispositivos para excluir">
-                <button type="button" onclick="excluirDevice()">Excluir</button>
-        </div>
-
-</nav><!--cadastro de sensores-->
+        <!--cadastro de sensores-->
        </main>
        <script src="menu.js"></script>
        <script src="devices.js"></script>
