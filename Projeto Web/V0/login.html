@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulário de Login</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .bg-gradient-dark {
+      background: linear-gradient(135deg, #2c3e50, #9ec4f2);
+    }
+    .bg-gradient-light {
+      background: linear-gradient(135deg, #2c3e50, #60a5fa);
+    }
+  </style>
+</head>
+<body class="bg-gradient-dark min-h-screen flex items-center justify-center p-4">
+  <main class="bg-white/10 backdrop-blur-md rounded-lg shadow-2xl p-8 max-w-md w-full">
+    <form onsubmit="return login(event)">
+      <div class="flex flex-col items-center mb-8">
+        <img src="resources/img/meu-logo.png" alt="Logo" class="w-20 h-20 mb-4">
+        <h1 class="text-3xl font-bold text-white">Bem Vindo</h1>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <label for="txtUsername" class="block text-sm font-medium text-white/80">Usuário:</label>
+          <input
+            id="txtUsername"
+            type="text"
+            name="j_username"
+            class="mt-1 block w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            required
+            autofocus
+            autocomplete="off"
+            placeholder="Digite seu usuário"
+          />
+        </div>
+
+        <div>
+          <label for="txtPassword" class="block text-sm font-medium text-white/80">Senha:</label>
+          <input
+            id="txtPassword"
+            type="password"
+            name="j_password"
+            class="mt-1 block w-full px-4 py-2 bg-white/10 border border-white/20 rounded-md text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+            required
+            placeholder="Digite sua senha"
+          />
+        </div>
+
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <input
+              id="flexCheckDefault"
+              type="checkbox"
+              class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-white/20 rounded"
+            />
+            <label for="flexCheckDefault" class="ml-2 text-sm text-white/80">Lembre-se de mim</label>
+          </div>
+          <a href="#" class="text-sm text-blue-400 hover:text-blue-300">Esqueceu a senha?</a>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-gradient-light text-white py-2 px-4 rounded-md hover:bg-blue-600 transition duration-300"
+        >
+          Entrar
+        </button>
+      </div>
+
+      <p class="mt-6 text-center text-sm text-white/60">© 2025 - IFC - Juliezer Silva</p>
+    </form>
+  </main>
+
+  <script>
+    async function login(event) {
+      event.preventDefault(); // Impede o envio padrão do formulário
+
+      const username = document.getElementById('txtUsername').value;
+      const password = document.getElementById('txtPassword').value;
+
+      try {
+        const response = await fetch('http://localhost:3001/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          alert(errorData.error); // Exibe o erro
+          return;
+        }
+
+        const result = await response.json();
+        alert(result.message); // Exibe a mensagem de sucesso
+        window.location.href = "home.html"; // Redireciona para home.html
+      } catch (error) {
+        alert('Erro ao fazer login: ' + error.message);
+      }
+    }
+  </script>
+</body>
+</html>

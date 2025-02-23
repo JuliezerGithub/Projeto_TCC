@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+
+       <nav class="menu-lateral col-auto">
+                
+                <div class="btn-expandir">
+                        <i class="bi bi-list" id="btn-exp"></i>
+                </div> <!--btn-expandir-->
+
+
+                <ul class="nav flex-column pt-3">
+                        <li class="item-menu ativo">
+                              <a href="#" id="home-link">
+                                <span class="icon"><i class="bi bi-house-door"></i></span>
+                                <span class="txt-link">Home</span>
+                              </a>  
+                        </li>
+                        <li class="item-menu">
+                                <a href="#" id="dashboard-link">
+                                  <span class="icon"><i class="bi bi-columns-gap"></i></span>
+                                  <span class="txt-link">Dashboard</span>
+                                </a>  
+                        </li>
+                        <li class="item-menu">
+                              <a href="#" id="devices-link">
+                                <span class="icon"><i class="bi bi-pc-display-horizontal"></i></span>
+                                <span class="txt-link">Devices</span>
+                              </a>  
+                        </li>
+                        <li class="item-menu">
+                                <a href="#" id="settings-link">
+                                  <span class="icon"><i class="bi bi-gear"></i></span>
+                                  <span class="txt-link">Settings</span>
+                                </a>  
+                        </li>
+
+                </ul>
+
+       </nav><!--menu-lateral-->
+       <main>
+        <div class="container-wrapper">
+                <!--Dispositivos conectados-->
+                <div class="container-fluids">
+                    <div class="cards">
+                        <div class="cards-header">
+                            <div class="cards-top">
+                                <div class="cards-number">
+                                    <p class="numberdrives">2</p>
+                                    <p class="subnumber">Dispositivos conectados</p>
+                                    <p class="atualizado">00:00:00</p>
+                                </div>
+                                <div class="cards-icons">
+                                    <i class="bi bi-hdd-network"></i>
+                                </div>
+                            </div>
+                            <div class="cards-type">
+                                <p class="ticket">Total: 6</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Sensores conectados-->
+                <div class="container-fluids">
+                        <div class="cards2">
+                            <div class="cards-header">
+                                <div class="cards-top">
+                                    <div class="cards-number">
+                                        <p class="numberdrives">8</p>
+                                        <p class="subnumber">Sensores conectados</p>
+                                        <p class="atualizado">00:00:00</p>
+                                    </div>
+                                    <div class="cards-icons">
+                                        <i class="bi bi-webcam"></i>
+                                    </div>
+                                </div>
+                                <div class="cards-type">
+                                    <p class="ticket2">Total: 16</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                                    
+                <!--Valor Monetário-->
+                <div class="container-fluids">
+                    <div class="cards3">
+                        <div class="cards-header">
+                            <div class="cards-top">
+                                <div class="cards-number">
+                                    <p class="numberdrives">5.000,00</p>
+                                    <p class="subnumber">Valor total mês</p>
+                                    <p class="atualizado">00:00:00</p>
+                                </div>
+                                <div class="cards-icons">
+                                    <i class="bi bi-currency-dollar"></i>
+                                </div>
+                            </div>
+                            <div class="cards-type">
+                                <p class="ticket3">Mês atual: fevereiro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Consumo-->
+                <div class="container-fluids">
+                    <div class="cards4">
+                        <div class="cards-header">
+                            <div class="cards-top">
+                                <div class="cards-number">
+                                    <p class="numberdrives">1750</p>
+                                    <p class="subnumber">kilowatt-hora (kWh)</p>
+                                    <p class="atualizado">00:00:00</p>
+                                </div>
+                                <div class="cards-icons">
+                                    <i class="bi bi-lightning"></i>
+                                </div>
+                            </div>
+                            <div class="cards-type">
+                                <p class="ticket4">Mês atual: fevereiro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>          
+
+       </main>
+       <script src="menu.js"></script>
+</body>
+</html>
