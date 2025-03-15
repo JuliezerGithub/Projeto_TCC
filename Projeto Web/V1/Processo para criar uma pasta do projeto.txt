@@ -1,0 +1,17 @@
+Para criar uma conexão com um servidor que salve os dados em um banco de dados, você precisará de um backend que gerencie as requisições HTTP e interaja com o banco de dados. Vou te guiar na criação de um backend simples usando Node.js com Express e um banco de dados SQLite. Vamos dividir isso em etapas:
+
+1. Configuração do Backend (Node.js + Express + SQLite)
+Passo 1: Inicialize o projeto Node.js
+Crie uma pasta para o seu projeto e inicialize um novo projeto Node.js:
+
+bash
+Copy
+mkdir meu-projeto
+cd meu-projeto
+npm init -y
+Passo 2: Instale as dependências necessárias
+Instale o Express, SQLite e outras dependências necessárias:
+
+bash
+Copy
+npm install express sqlite3 body-parser cors
